@@ -1,0 +1,59 @@
+<div class="card textcenter mt-3" [ngClass]="{'add-appointment': showForm}">
+       <!--ngClass allow us to modify classes by using an object and targetting some css classes adding and deleting those classes based uponthe value of an element-->
+<!--here add-appointment here this css class is added based apon the value of the variable 
+showForm and if it is true then class= cardbody will not be displayed -->
+    <div class="apt-addheading card-header bg-primary text-white"
+    (click)="toggleAptDisplay()">
+       <i class="fa fa-plus"></i> Add Information
+    </div><!-- card-header -->
+  <div class="card-body">
+   <form id="aptForm" novalidate (ngSubmit)="handledAdd(aptForm.value)"
+   #aptForm="ngForm">
+   <!--here aptForm object value we are sending and it will have the  value that we received from user -->
+       <!--now send the variables which will take from user 
+    an event will be called that is ngSubmit()-->
+      <div class="form-group form-row">
+          <label class="col-md-2 col-form-label text-md-right" for="petName"> Pet Name </label>
+          <div class="col-md-10">
+              <!--in input field whereever we have name we will place ngModel this indicates that this is the variable that i want to pass-->
+            <input type="text" class="form-control" name="petName" id="petName" placeholder="Your pet Name " ngModel>
+          </div><!-- col-md-10 --> 
+        </div><!-- form-group --> 
+  <div class="form-group form-row">
+          <label class="col-md-2 col-form-label text-md-right"
+            for="ownerName"> Owner Name</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="ownerName"
+              id="ownerName" placeholder="Author Name" ngModel>
+          </div><!-- col-md-10 -->
+        </div><!-- form-group --> 
+  <div class="form-group form-row">
+          <label class="col-md-2 col-form-label text-md-right" for="aptDate">Date</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="aptDate" name="aptDate" ngModel>
+          </div><!-- col-md-4 --> 
+          <label class=
+          "col-md-2 col-form-label text-md-right" for="aptTime">Time</label>
+          <div class="col-md-4">
+            <input type="time" class="form-control" name="aptTime" id="aptTime" ngModel>
+          </div><!-- col-md-4 --> 
+        </div><!-- form-group -->
+  
+        <div class="form-group form-row">
+          <label class="col-md-2 text-md-right" for="aptNotes">Pets Problem</label>
+          <div class="col-md-10">
+            <textarea class="form-control" rows="4" cols="50"
+              name="aptNotes" id="aptNotes" placeholder="Add Link Here" ngModel> <link href=""></textarea>
+          </div><!-- col-md-10 --> 
+        </div><!-- form-group -->
+  
+        <div class="form-group form-row mb-0">
+          <div class="offset-md-2 col-md-10">
+            <button type="submit" class="btn btn-primary d-block ml-auto"
+            >Add </button>
+          </div><!-- col-md-offset-2 --> 
+        </div><!-- form-group -->
+  
+      </form>
+    </div><!-- card-body -->
+  </div><!-- card-primary -->

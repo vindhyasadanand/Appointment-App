@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<main class="page bg-white" id="petratings">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 bg-white">
+ <div class="container">
+          <h2 class="py-5">{{title}}</h2>
+          <app-add (addEvt) = "addApt($event)"></app-add>
+          <!--here we need to add event capture and here we are assigning that to a method whenever someone writes something in the input field we need to execute some event in typescript file-->
+          <app-search
+          (queryEvt)="searchApt($event)"
+          [orderType]="orderType"
+           ></app-search>
+          <!--this is to pass data that is present app component to list component to do that we are using property binding 
+we are we are passing whatever the data present in theList to the aptList-->  
+ <app-list [aptList] = "modifiedList"
+(deleteEvt)="deleteApt($event)"> </app-list>
+<!--we are capuring event the event from list.ts file
+and we are going to listen for delete event and when this event occours we are going to execute a method 
+and we are going to pass information regarding this event -->  
+<!--now we are having information which is to be deleated-->       
+</div>
+      </div><!-- col-md-12 -->
+    </div><!-- row -->
+  </div><!-- container -->
+</main><!-- main -->

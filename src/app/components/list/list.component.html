@@ -1,0 +1,26 @@
+<div class="appointment-list item-list mb-3">
+    <div class="pet-item col media py-3"
+      *ngFor="let item of aptList">
+      <!--here now it will create a temporary variable called item 
+       for each element in aptList-->
+      <div class="mr-3">
+        <button class="pet-delete btn btn-sm btn-danger" (click)="handleDelete(item)">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </div><!-- media-left -->
+  
+      <div class="pet-info media-body">
+        <div class="pet-head d-flex">
+          <span class="pet-name" contenteditable="true">{{item.petName  }}</span>
+          <span class="apt-date ml-auto">{{item.aptDate |date:'M-d h:mm a' }}</span>
+          <!--here M for month, d for date, mm for minute , a for am  -->
+        </div><!-- pet-head -->
+  
+        <div class="owner-name">
+          <span class="label-item">Owner: </span>
+          <span contenteditable="true">{{item.ownerName}}</span>
+        </div>
+        <div class="apt-notes" contenteditable="true">{{item.aptNotes}}</div>
+      </div><!-- pet-info -->
+    </div><!-- pet-item -->
+  </div><!-- appointment-list -->
