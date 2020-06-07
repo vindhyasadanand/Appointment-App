@@ -1,3 +1,49 @@
+  This is the Angular app which helps patients to book their appointment with the doctor.
+  And we can add the new appointment and delete the   Appointment and we can search patient name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # HomeTouch
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
